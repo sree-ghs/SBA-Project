@@ -1,0 +1,53 @@
+
+<div class="container-fluid content-body homescreen">
+    <div class="col-md-12 appName clearpadding">Welcome {{username}}
+      <div class="col-md-4 loginContainer clearpadding">
+        <div class="col-md-4 clearpadding">
+          <button class="gotoButton" (click)="openBookmarked()">Bookmarked Giphys</button>
+        </div>
+        <div class="col-md-4 clearpadding">
+          <button class="gotoButton"  (click)="openFavourite()">Favoirite Giphys</button>
+        </div>
+        <div class="col-md-4 clearpadding">
+          <button class="gotoButton"  (click)="logout()">Logout</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 clearpadding" style="margin-bottom: 10px;">
+      <input type="text" class="searchBox" [(ngModel)]="searchInput"/>
+      <button type="button" class="searchButton" (click)="searchGiphy()">Search</button>
+    </div>
+    <div class="col-md-12 clearpadding" class="fixDisplay">
+      <p class="heading" *ngIf="showBookmarked">Bookmarked Giphys are here ...</p>
+      <p class="heading" *ngIf="showFavourite">Favorite Giphys are here ...</p>
+
+      <div *ngIf="!showBookmarked && !showFavourite">
+        <div *ngFor="let option of giphyUpdatedList; let i=index" class="gifDisplay">
+          <img *ngIf="!showBookmarked" [src]='option.giphyObject.images.fixed_height.url'/>
+          <i class="fa fa-bookmark bookmarkIcon" (click)="changeBookMarked(option,i)"
+          [ngClass]="{'redBookmarked': option.bookMarkFlag===true, 'bookmarkIcon':option.bookMarkFlag===false}"></i>
+          <i class="fa fa-heart favouriteIcon" (click)="changeFavourite(option, i)" 
+          [ngClass]="{'redFavouriteIcon': option.favouriteFlag===true, 'favouriteIcon':option.favouriteFlag===false}"></i>
+        </div>
+      </div>
+
+      <div *ngIf="showBookmarked">
+        <div *ngFor="let option of giphyBookmarkedList; let i=index" class="gifDisplay">
+          <img [src]='option.giphyObject.images.fixed_height.url'/>
+          <i class="fa fa-bookmark bookmarkIcon" (click)="unBookMarked(option, i)"
+          [ngClass]="{'redBookmarked': option.bookMarkFlag===true, 'bookmarkIcon':option.bookMarkFlag===false}"></i>
+        </div>
+      </div>
+
+      <div *ngIf="showFavourite">
+        <div *ngFor="let option of giphyFavouriteList; let i=index" class="gifDisplay">
+          <img [src]='option.giphyObject.images.fixed_height.url'/>
+          <i class="fa fa-heart favouriteIcon" (click)="unFavoirited(option, i)"
+          [ngClass]="{'redFavouriteIcon': option.favouriteFlag===true, 'favouriteIcon':option.favouriteFlag===false}"></i>
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+  

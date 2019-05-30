@@ -1,0 +1,28 @@
+
+<div class="container-fluid content-body homescreen">
+    <p class="col-md-12 appName">Gipher
+      <span class="loginContainer">
+        <i class="fa fa-user userLogo"></i>
+        <span>Login Page</span>
+      </span>
+    </p>
+    <div class="col-md-4 col-md-offset-4 loginForm clearpadding"  >
+      <form class="login-form" (submit)="logInUserHomePage()">
+        <p class="heading">Please Login!</p>
+        <span class="errorMessage" *ngIf="submitErrorMessage!=''">{{submitErrorMessage}}</span>
+        <div >
+          <input type="text" placeholder="Enter Username here.." class="searchBox" [formControl]='username' (blur)="checkUsername()"/>
+          <span class="errorMessage" *ngIf="usernameInvalid">Please Enter Username!</span>
+        </div>
+        <div >
+          <input type="password" placeholder="Enter Password here.." class="searchBox" [formControl]="password" (blur)="checkPassword()"/>
+          <span class="errorMessage" *ngIf="passwordInvalid">Please Enter Password!</span>
+        </div>
+        <button type="button" class="loginButton" (click)="logInUserHomePage()">Login</button>
+      </form>
+      <p class="heading">Don't have an account? <a href="javascript:void(0)" (click)="openRegistrationPage()" style="color:darkblue; cursor: pointer;">Register here</a></p>
+    </div>
+    
+    
+  </div>
+  

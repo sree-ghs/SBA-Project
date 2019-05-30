@@ -1,0 +1,38 @@
+# Dockerfile has been added in all micro-services, you need to dockerize all micro-services and add docker-compose.yml file
+version: "3"
+services:
+  accountmanager:
+    image: accountmanager
+    build:
+      context: accountmanager/
+    restart: always
+    network_mode: host
+    ports:
+      - 8081:8081
+    depends_on:
+      - user-mysql
+
+  giphermanager:
+    image: giphermanager
+    build:
+      context: giphermanager/
+    restart: always
+    network_mode: host
+    ports:
+      - 8082:8082
+    depends_on:
+      - user-mysql
+
+  user-mysql:
+    image: mysql:5.6
+    restart: always
+    network_mode: host
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_DATABASE: Giphy
+
+  

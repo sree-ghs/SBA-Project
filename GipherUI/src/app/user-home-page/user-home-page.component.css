@@ -1,0 +1,102 @@
+.homescreen{
+    background-image: url('http://i.stack.imgur.com/kx8MT.gif');
+    background-size: cover;
+    height: 100vh;
+    padding:0;
+    margin:0;
+    padding: 12px;
+    background-color: black;
+}
+
+.appName{
+    color: azure;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.loginContainer{
+    float: right;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+
+.userLogo{
+    padding-right: 12px;
+}
+
+.searchBox{
+    width: 90%;
+    height: 7vh;
+}
+
+.searchButton{
+    width: 10%;
+    height: 7vh;
+    cursor: pointer;
+}
+.gotoButton{
+    color: cadetblue;
+    background-color: azure;
+    padding: 2%;
+    font-size: 18px;
+    float: right;
+    width: 100%;
+    cursor: pointer;
+}
+
+.fixDisplay{
+    margin-top: 5%;
+}
+
+.gifDisplay{
+    display: inline;
+    margin-left: 1%;
+    margin-top: 1%;
+}
+.clearpadding{
+    padding: 0px;
+}
+
+.heading{
+    text-align: left;
+    /* padding: 2%; */
+    padding: 5px;
+    color: rgb(190, 234, 235);
+    font-weight: bold;
+    font-size: 20px;
+}
+.bookmarkIcon{
+    color: rgb(129, 210, 235);
+    position: relative;
+    top: -80px;
+    right: 29px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.redBookmarked{
+    color: rgb(173, 46, 46);;
+    position: relative;
+    top: -80px;
+    right: 29px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.favouriteIcon{
+    margin-left: 2px;
+    color: rgb(129, 210, 235);
+    position: relative;
+    top: -80px;
+    right: 29px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.redFavouriteIcon{
+    margin-left: 2px;
+    color:rgb(173, 46, 46);;
+    position: relative;
+    top: -80px;
+    right: 29px;
+    font-size: 15px;
+    cursor: pointer;
+}

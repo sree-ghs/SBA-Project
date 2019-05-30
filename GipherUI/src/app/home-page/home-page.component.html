@@ -1,0 +1,22 @@
+
+<div class="container-fluid content-body homescreen">
+  <p class="col-md-12 appName">Gipher
+    <span class="loginContainer" (click)="openLoginInPage()">
+      <i class="fa fa-user userLogo"></i>
+      <span>Login</span>
+    </span>
+  </p>
+  <div class="col-md-12" style="margin-bottom: 10px;">
+    <input type="text" class="searchBox" [(ngModel)]="searchInput"/>
+    <button type="button" class="searchButton" (click)="searchGiphy()">Search</button>
+  </div>
+  <div class="col-md-12" class="fixDisplay">
+    <div *ngFor="let option of giphyList" class="gifDisplay">
+      <img [src]='option.images.fixed_height.url'/>
+    </div>
+    <!-- <img src="https://media.giphy.com/media/IRFQYGCokErS0/giphy.gif"/>
+    <img src="https://media.giphy.com/media/YsTs5ltWtEhnq/giphy.gif"/>
+    <img src="http://media2.giphy.com/media/FiGiRei2ICzzG/200.gif"/> -->
+  </div>
+  
+</div>

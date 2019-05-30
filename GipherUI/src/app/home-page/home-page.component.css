@@ -1,0 +1,47 @@
+.homescreen{
+    background-image: url('http://i.stack.imgur.com/kx8MT.gif');
+    background-size: cover;
+    height: 100vh;
+    padding:0;
+    margin:0;
+    padding: 12px;
+    background-color: black;
+}
+
+.appName{
+    color: azure;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+.loginContainer{
+    float: right;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.userLogo{
+    padding-right: 12px;
+}
+
+.searchBox{
+    width: 90%;
+    height: 7vh;
+}
+
+.searchButton{
+    width: 10%;
+    height: 7vh;
+    cursor: pointer;
+}
+
+.fixDisplay{
+    margin-top: 5%;
+}
+
+.gifDisplay{
+    display: inline;
+    margin-left: 1%;
+    margin-top: 1%;
+}

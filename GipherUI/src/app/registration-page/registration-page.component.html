@@ -1,0 +1,35 @@
+<div class="container-fluid content-body homescreen">
+    <p class="col-md-12 appName">Gipher
+      <span class="loginContainer" (click)="openLoginInPage()">
+        <i class="fa fa-user userLogo"></i>
+        <span >Login</span>
+      </span>
+    </p>
+    <div class="col-md-4 col-md-offset-4 loginForm clearpadding"  >
+      <form [formGroup]="registerForm" class="login-form" (submit)="afterRegistration()">
+        <p class="heading">Please Register here!</p>
+        <span class="errorMessage" *ngIf="submitErrorMessage!=''">{{submitErrorMessage}}</span>
+        <div >
+          <input type="text" placeholder="Enter Firstname here.." class="searchBox" formControlName="firstname"/>
+        </div>
+        <div >
+          <input type="text" placeholder="Enter Lastname here.." class="searchBox" formControlName="lastname"/>
+        </div>
+        <div >
+          <input type="text" placeholder="Enter Username here.." class="searchBox" formControlName="username"/>
+        </div>
+        <div >
+          <input type="text" placeholder="Enter Email here.." class="searchBox" formControlName="email"/>
+        </div>
+        <div >
+          <input type="text" placeholder="Enter Password here.." class="searchBox" formControlName="password"/>
+        </div>
+        <button type="button" class="loginButton" (click)="afterRegistration()">Register</button>
+        <button type="button" class="loginButton" (click)="reset()">Reset</button>
+        
+      </form>
+    </div>
+    
+    
+  </div>
+  
